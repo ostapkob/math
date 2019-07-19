@@ -1,26 +1,16 @@
-def kuzn(n):
-    if n <= 1:
-        return 1
-    else:
-        if n>3:
-            return kuzn(n-1) + kuzn(n-2) + kuzn(n-3) + kuzn(n-4)
-        elif n>2:
-            return kuzn(n-1) + kuzn(n-2) + kuzn(n-3)
-        else:
-            return kuzn(n-1) + kuzn(n-2)
+from functools import lru_cache
 
+# @lru_cache()
 def kuzn(n, ls):
+
     if n <= 1:
         return 1
     else:
-        if n>3:
-            return kuzn(n-1, ls) + kuzn(n-2, ls) + kuzn(n-3, ls) + kuzn(n-4, ls)
-        elif n>2:
-            return kuzn(n-1, ls) + kuzn(n-2, ls) + kuzn(n-3, ls)
-        else:
-            return kuzn(n-1, ls) + kuzn(n-2, ls)
+        # new_ls = [x for x in ls if x<=n]
+        return sum([kuzn(n-x, ls) for x in [x for x in ls if x<=n]])
 
-# coin = [1, 2, 5, 10, 20, 50, 100]
-coin = [1, 2, 3, 4]
-print(kuzn(5, coin))
-
+# coin = [1, 2, 5, ]
+coin = [1,2,5,10]
+print(kuzn(27, coin))
+# for i in range(12):
+#     print(i, ':', kuzn(i, coin))
