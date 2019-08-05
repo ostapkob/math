@@ -15,6 +15,14 @@ def print_lists(list_of_list, round_digit=2):
             print(str(j).ljust(maxl[n]), end=' | ')
         print()
 
+def is_prime(n):
+    '''Check is number simple'''
+    if n % 2 == 0:
+        return False
+    d = 2
+    while d <= n**(1/2) and n % d != 0:
+        d += 1
+    return d <= n and n % d != 0
 
 def len_x(c):
     rez = 0
