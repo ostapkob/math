@@ -17,6 +17,7 @@ def print_lists(list_of_list, round_digit=2):
 
 def is_prime(n):
     '''Check is number simple'''
+    n = int(n)
     if n % 2 == 0:
         return False
     d = 2
