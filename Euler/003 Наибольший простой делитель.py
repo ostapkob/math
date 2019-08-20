@@ -8,7 +8,7 @@ def IsPrime(n):
     return d == n
 
 
-def IsPrime2(n):
+def IsPime2(n):
     d = 2
     while d * d < n and n % d != 0:
         d += 1
