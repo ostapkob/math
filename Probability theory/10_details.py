@@ -17,3 +17,6 @@ for var in com(ls, len(fnd)):
     s +=1
 print(e/s)
 print(1/combination_my(len(ls), len(fnd)))
+
+
+print(combination_my(10, 3))
