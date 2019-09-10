@@ -96,3 +96,11 @@ def divided_parts(mas: list, n):
 # print(n)
 # print_lists(divided_parts1(n, 7))
 
+def tuple_to_int(n):
+    rn = n[::-1]
+    res =0
+    for e, i in enumerate(rn, 0):
+        res += i*10**e
+    return res
+
+
